@@ -10,7 +10,7 @@ public class Chat {
     private List<User> usersOfChat = new ArrayList<User>();
     private List<Message> history = new ArrayList<Message>();
 
-     Chat(String name){
+    public Chat(String name){
         this.name  = name;
     }
 

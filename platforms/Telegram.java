@@ -9,7 +9,7 @@ import chat.Message;
 import user.ICreateUser;
 import user.User;
 
-public class Telegram implements Platform, ICreateChat, ICreateUser {
+public class Telegram implements Platform,ICreateChat, ICreateUser {
     private List<User> allUser = new ArrayList<>();
     private List<Chat> allChat = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class Telegram implements Platform, ICreateChat, ICreateUser {
         if (searchChat(nameChat) != null) {
             return null;
         }
-        Chat tmp = createChat(nameChat);
+        Chat tmp = IcreateChat(nameChat);
         allChat.add(tmp);
         return tmp;
     }

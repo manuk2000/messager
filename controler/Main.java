@@ -9,7 +9,6 @@ import user.User;
 
 public class Main extends Telegram {
     private static Scanner strInput = new Scanner(System.in);
-    private static Scanner numberInput = new Scanner(System.in);
 
     public static void main(String[] args) {
         Platform platform = new Telegram();
