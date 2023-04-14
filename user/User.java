@@ -10,7 +10,7 @@ public class User {
     private final String phone;
     private List<Chat> ownChats = new ArrayList<Chat>();
 
-    public User(String name , String phone){
+     User(String name , String phone){
         this.name = name;
         this.phone = phone;
     }
