@@ -47,6 +47,9 @@ public class Telegram implements Platform {
     }
 
     public void deleteMySelf(User self) {
+        for (Chat chat : self.getOwnChats()) {
+            allChat.remove(chat);
+        }
         allUser.remove(self);
     }
 
@@ -55,7 +58,9 @@ public class Telegram implements Platform {
             return null;
         }
         Chat tmp = new Chat(nameChat);
+        tmp.addUser(self);
         allChat.add(tmp);
+        self.addChat(tmp);
         return tmp;
     }
 
@@ -66,6 +71,7 @@ public class Telegram implements Platform {
             return;
         }
         allChat.remove(chat);
+        self.removeChat(chat);
     }
     
     public boolean addUserToChat(String phone, String chatName) {
@@ -103,6 +109,17 @@ public class Telegram implements Platform {
             return false;
         }
         hostChat.addMessage(self, context);
+        // allChat.forEach(i -> {
+        //     if(i.equals(hostChat)){
+        //         for (Chat chat : self.getOwnChats()) {
+        //             if(chat.equals(hostChat)){
+        //                 chat
+        //             }
+        //         }
+        //         Message tmp = 
+        //         i.addMessage(self, );
+        //     }
+        // });;
         return true;
     }
 
@@ -123,7 +140,7 @@ public class Telegram implements Platform {
             if (chat.getName().equals(chatName)) {
                 int index = 0;
                 for (Message message : chat.getHistory()) {
-                    System.out.println(index++ + message.getContext());
+                    System.out.println(index++ + ": " + message.getContext());
                 }
             }
         }

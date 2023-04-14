@@ -1,0 +1,7 @@
+{
+    "window.autoDetectColorScheme": false,
+    "window.commandCenter": true,
+    "window.closeWhenEmpty": false,
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "workbench.activityBar.visible": true
+}

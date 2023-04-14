@@ -19,15 +19,20 @@ public class User {
         return ownChats;
     }
 
+    public void addChat(Chat chat) {
+        ownChats.add( chat);
+    }
+    public void removeChat(Chat chat) {
+        ownChats.remove( chat);
+    }
+
     public String getName() {
         return name;
     }
     public String getPhone() {
         return phone;
     }
-    public List<Chat> getFoo() {
-        return ownChats;
-    }
+
     public void setName(String name) {
         this.name = name;
     }
