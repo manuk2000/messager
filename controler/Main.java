@@ -6,7 +6,7 @@ import platforms.Platform;
 import platforms.Telegram;
 import user.User;
 
-public class Main extends Telegram {
+public class Main {
 
   private static Scanner strInput = new Scanner(System.in);
   private static Scanner numInput = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class Main extends Telegram {
     Telegram telegram = (Telegram) platform;
 
     int command;
-    Program:while (true) {
+    Program: while (true) {
       User self = null;
       System.out.println("Please select one index of the options");
       System.out.println("1 -> Sing in");
@@ -53,24 +53,25 @@ public class Main extends Telegram {
         continue;
       }
 
-      GenerelMenu:while (true) {
+      GenerelMenu: while (true) {
         System.out.println("Please select one index of the options");
         System.out.println("1 -> Show all chats");
         System.out.println("2 -> Create chat");
         System.out.println("3 -> Add user to chat");
         System.out.println("4 -> Remove chat");
         System.out.println("5 -> Delete self user");
+        System.out.println("6 -> Log out");
+
         command = Integer.parseInt(numInput.next());
         strInput.reset();
 
         switch (command) {
           case 1:
             while (true) {
-                System.out.println("All chats");
+              System.out.println("All chats");
               telegram.showAllNameChat(self);
               System.out.println(
-                "Please select one name of the Chat or 'break' from generel menu"
-              );
+                  "Please select one name of the Chat or 'break' from generel menu");
               String nameChat = strInput.nextLine();
               strInput.reset();
               if (nameChat.equals("break")) {
@@ -126,6 +127,8 @@ public class Main extends Telegram {
           case 5:
             telegram.deleteMySelf(self);
             break Program;
+          case 6:
+            break Program;
           default:
             break;
         }
@@ -134,10 +137,9 @@ public class Main extends Telegram {
   }
 
   private static void addOrDeleteMessage(
-    Telegram telegram,
-    User self,
-    String chatName
-  ) {
+      Telegram telegram,
+      User self,
+      String chatName) {
     Chat tmp = null;
     for (Chat chat : self.getOwnChats()) {
       if (chat.getName().equals(chatName)) {

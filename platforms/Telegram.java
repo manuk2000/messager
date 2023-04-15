@@ -9,7 +9,7 @@ import chat.Message;
 import user.ICreateUser;
 import user.User;
 
-public class Telegram implements Platform,ICreateUser,ICreateChat {
+public class Telegram implements Platform, ICreateUser, ICreateChat {
     private List<User> allUser = new ArrayList<>();
     private List<Chat> allChat = new ArrayList<>();
 
@@ -73,7 +73,7 @@ public class Telegram implements Platform,ICreateUser,ICreateChat {
         allChat.remove(chat);
         self.removeChat(chat);
     }
-    
+
     public boolean addUserToChat(String phone, String chatName) {
         User user = searchUser(phone);
         Chat chat = searchChat(chatName);
@@ -110,15 +110,15 @@ public class Telegram implements Platform,ICreateUser,ICreateChat {
         }
         hostChat.addMessage(self, context);
         // allChat.forEach(i -> {
-        //     if(i.equals(hostChat)){
-        //         for (Chat chat : self.getOwnChats()) {
-        //             if(chat.equals(hostChat)){
-        //                 chat
-        //             }
-        //         }
-        //         Message tmp = 
-        //         i.addMessage(self, );
-        //     }
+        // if(i.equals(hostChat)){
+        // for (Chat chat : self.getOwnChats()) {
+        // if(chat.equals(hostChat)){
+        // chat
+        // }
+        // }
+        // Message tmp =
+        // i.addMessage(self, );
+        // }
         // });;
         return true;
     }

@@ -10,7 +10,7 @@ public class User {
     private final String phone;
     private List<Chat> ownChats = new ArrayList<Chat>();
 
-     User(String name , String phone){
+    User(String name, String phone) {
         this.name = name;
         this.phone = phone;
     }
@@ -20,15 +20,17 @@ public class User {
     }
 
     public void addChat(Chat chat) {
-        ownChats.add( chat);
+        ownChats.add(chat);
     }
+
     public void removeChat(Chat chat) {
-        ownChats.remove( chat);
+        ownChats.remove(chat);
     }
 
     public String getName() {
         return name;
     }
+
     public String getPhone() {
         return phone;
     }
@@ -36,5 +38,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }
